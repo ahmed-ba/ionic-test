@@ -9,4 +9,6 @@ sudo npm install -g ionic
 cd ../../
 npm i
 ionic build
+./gradlew clean
+./gradlew assemble
 npx cap sync
