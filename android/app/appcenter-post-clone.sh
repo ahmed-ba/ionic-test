@@ -1,27 +1,7 @@
 #!/usr/bin/env bash
 
-# fail if any command fails
-set -e
-# debug log
-set -x
+# Example: Clone a required repository
+git clone https://github.com/ahmed-ba/ionic-test
 
-# Required nodeJS version
-NODE_VERSION=18.14.0
-
-# workaround to override the v8 alias
-npm config delete prefix
-. ~/.bashrc
-nvm install "$NODE_VERSION"
-nvm alias node10 "$NODE_VERSION"
-
-# go to root of project
-cd ../..
-
-# install dependencies
-npm i
-
-# run optimized production build
-npm run build -- --prod
-
-# copy the web assets to the native projects and updates the native plugins and dependencies based in package.json
-npx cap sync
+# Example: Install App Center CLI
+npm install -g appcenter-cli
